@@ -1,31 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, ActivityIndicator } from 'react-native';
+import { Text, View } from 'react-native';
 import "./global.css";
 import { useFonts } from "expo-font";
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    'DMSansRegular': require('./assets/fonts/DM_Sans/DMSansRegular.ttf'),
-    'DMSansBold': require('./assets/fonts/DM_Sans/DMSansBold.ttf'),
-    'DMSansItalic': require('./assets/fonts/DM_Sans/DMSansItalic.ttf'),
+  const [fontsLoaded, error] = useFonts({
+    'MontserratRegular': require('./assets/fonts/Montserrat-Regular.ttf'),
+    'MontserratBold': require('./assets/fonts/Montserrat-Bold.ttf'),
+    'MontserratItalic': require('./assets/fonts/Montserrat-Italic.ttf'),
   });
 
-  if (!fontsLoaded) {
-    return (
-      <View className="flex-1 items-center justify-center">
-        <ActivityIndicator size="large" />
-      </View>
-    );
+  if (!fontsLoaded && !error) {
+    return null;
   }
 
   return (
-    <View className="flex-1 bg-blue-500 items-center justify-center">
-      <Text 
-        className="text-4xl text-white font-bold mb-4" 
-        style={{ fontFamily: 'DMSansBold' }}
-      >Prueba
-      </Text>
-      <StatusBar style="light" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView className="flex-1 bg-gray-200">
+        <View className="px-10 mt-5">
+          <Text className="text-center font-montserrat-bold text-black text-4xl mb-10">Librería Nexus</Text>
+          <Text className="text-center font-montserrat text-black text-xl mb-10"> Conoce nuestros libros</Text>
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }

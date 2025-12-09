@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        DMSans: ["DMSans"],
-        DMSansItalic: ["DMSans-Italic"],
+        'montserrat': ['MontserratRegular'],
+        'montserrat-bold': ['MontserratBold'],
+        'montserrat-italic': ['MontserratItalic'],
       },
     },
   },
