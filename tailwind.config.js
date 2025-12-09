@@ -11,8 +11,11 @@ module.exports = {
         'montserrat': ['MontserratRegular'],
         'montserrat-bold': ['MontserratBold'],
         'montserrat-italic': ['MontserratItalic'],
+        'SansRegular': ['SansRegular'],
+        'SansBold': ['SansBold'],
+        'SansItalic': ['SansItalic'],
+      },
       },
     },
-  },
-  plugins: [],
-};
+      plugins: [],
+   }
