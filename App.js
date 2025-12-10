@@ -8,6 +8,11 @@ import Button from "./components/Button";
 import Welcome from './components/Welcome';
 import BannerHome from './components/BannerHome';
 import BooksSection from './components/BookSection';
+import LibreriaTienda from './components/LibreriaTienda';
+import UserProfile from './components/UserProfile';
+import ContactForm from './components/ContactForm';
+import QuienesSomos from './components/QuienesSomos';
+import SuscripcionNews from './components/SuscripcionNews';
 
 export default function App() {
   const [fontsLoaded, error] = useFonts({
@@ -31,6 +36,11 @@ export default function App() {
              <Welcome />
              <BannerHome />
              <BooksSection />
+             <SuscripcionNews />
+             <UserProfile />
+             <ContactForm />
+             <LibreriaTienda />
+             <QuienesSomos />
           </ScrollView>
          
         </SafeAreaView>
