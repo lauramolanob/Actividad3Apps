@@ -5,6 +5,9 @@ import { useFonts } from "expo-font";
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Haptics from "expo-haptics";
 import Button from "./components/Button";
+import Welcome from './components/Welcome';
+import BannerHome from './components/BannerHome';
+import BooksSection from './components/BookSection';
 
 export default function App() {
   const [fontsLoaded, error] = useFonts({
@@ -22,26 +25,14 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <StatusBar style="auto" backgroundColor="black "/>
-        <SafeAreaView className="flex-1 bg-gray-200">
-          <ScrollView className="px-10 mt-5 bg-white-500 text-white">
-            
-            <Text className="text-center font-montserrat-bold text-black text-4xl mb-10">Librería Nexus</Text>
-            <Text className="text-center font-SansRegular text-black text-2xl mb-10">Nuestros libros</Text>
-
-            <Button
-              onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                console.log("Nuevos");}} 
-                onLongPress={() => console.log("Nuevos - LongPress")}>
-              Nuevos
-            </Button>
-
-            <Button onPress={() => console.log("De segunda")} onLongPress={() => console.log("De segunda - LongPress")}>
-              De segunda
-            </Button>
-            
-
+      <StatusBar style="auto" backgroundColor="white "/>
+        <SafeAreaView className="flex-1 bg-blue-50">
+          <ScrollView className="flex-1">
+             <Welcome />
+             <BannerHome />
+             <BooksSection />
           </ScrollView>
+         
         </SafeAreaView>
     </SafeAreaProvider>
   );
