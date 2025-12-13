@@ -1,8 +1,12 @@
 import React from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 const QuienesSomos = ({ nombre }) => (
-    <View className="py-8 px-2 bg-white mx-8">
+    <SafeAreaProvider>
+        <ScrollView className="flex-1">
+            <View className="py-8 px-2 bg-white mx-8">
         
         <View className="w-full items-left">
             
@@ -33,6 +37,12 @@ const QuienesSomos = ({ nombre }) => (
             </View>
         </View>
     </View>
+
+        </ScrollView>
+         
+    </SafeAreaProvider>
+    
+   
 );
 
 export default QuienesSomos;

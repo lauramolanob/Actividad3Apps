@@ -5,7 +5,7 @@ import BookCard from './BookCard';
 
 const API_URL = 'https://mock.apidog.com/m1/968218-952913-default/books';
 
-export default function BooksSection() {
+export default function BookSection() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {

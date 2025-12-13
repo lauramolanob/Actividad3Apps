@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, Alert, Image } from 'react-native'; 
+import { View, Text, TouchableOpacity, FlatList, Alert, Image, ScrollView } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'; 
 import axios from 'axios';
 
 const API_URL = 'https://mock.apidog.com/m1/968218-952913-default/books';
@@ -78,7 +79,9 @@ export default function BooksSection() {
   );
 
   return (
-    <View className="p-4">
+    <SafeAreaProvider>
+      <ScrollView className="flex-1">
+        <View className="p-4">
       <View className="mb-4">
         <Text className="text-xl font-montserrat-bold text-blue-950">
           Conoce nuestros libros disponibles
@@ -105,5 +108,8 @@ export default function BooksSection() {
         />
       )}
     </View>
+      </ScrollView>
+    </SafeAreaProvider>
+    
   );
 }
