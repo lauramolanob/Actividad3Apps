@@ -18,9 +18,6 @@ import Home from './components/Home';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
-
-
   const Drawer = createDrawerNavigator();
   const Tab = createBottomTabNavigator();
 
@@ -37,8 +34,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
   );
 }
 
-
- 
   export default function App() {
   const [fontsLoaded, error] = useFonts({
     'MontserratRegular': require('./assets/fonts/Montserrat-Regular.ttf'),

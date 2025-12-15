@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker'; 
 import CamposIterables from './CamposIterables'; 
+import * as Haptics from 'expo-haptics';
 
 export default function ContactForm() {
     const [helpType, setHelpType] = useState('');
@@ -13,16 +14,19 @@ export default function ContactForm() {
 
     const handleSubmit = () => {
         if (!nombre.trim() || !email.trim()) {
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
             Alert.alert("Error", "Por favor completa todos los campos obligatorios");
             return;
         }
 
         if (!helpType) {
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
             Alert.alert("Error", "Por favor selecciona cómo te podemos ayudar");
             return;
         }
 
         if (helpType === 'reclamos' && (!numeroPedido.trim() || !issueType)) {
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
             Alert.alert("Error", "Por favor completa los detalles del reclamo");
             return;
         }
