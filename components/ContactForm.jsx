@@ -12,7 +12,6 @@ export default function ContactForm() {
     const [numeroPedido, setNumeroPedido] = useState('');
 
     const handleSubmit = () => {
-        // Validaciones básicas
         if (!nombre.trim() || !email.trim()) {
             Alert.alert("Error", "Por favor completa todos los campos obligatorios");
             return;
@@ -23,13 +22,11 @@ export default function ContactForm() {
             return;
         }
 
-        // Si es reclamo, validar campos adicionales
         if (helpType === 'reclamos' && (!numeroPedido.trim() || !issueType)) {
             Alert.alert("Error", "Por favor completa los detalles del reclamo");
             return;
         }
 
-        // Crear objeto con los datos del formulario
         const formData = {
             nombre,
             email,
@@ -48,7 +45,6 @@ export default function ContactForm() {
             `Gracias ${nombre}. Hemos recibido tu ${helpType === 'reclamos' ? 'reclamo' : helpType === 'pregunta' ? 'pregunta' : 'mensaje'}.`
         );
 
-        // Limpiar formulario después de enviar
         setNombre('');
         setEmail('');
         setHelpType('');
